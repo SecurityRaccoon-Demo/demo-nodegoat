@@ -160,3 +160,18 @@ Here are the amazing [contributors](https://github.com/OWASP/NodeGoat/graphs/con
 ## License
 
 Code licensed under the [Apache License v2.0.](http://www.apache.org/licenses/LICENSE-2.0)
+
+## Resetting to the vulnerable baseline
+
+This repo is intentionally vulnerable for Security Raccoon demos. Raccoon fix PRs get merged here, which removes vulnerabilities over time. The original vulnerable state is kept as the lightweight tag `vulnerable-baseline` (tagged 2026-10-16).
+
+To restore it without rewriting history (no force-push), add a commit that puts the tree back to the baseline:
+
+```sh
+git fetch --tags origin
+git checkout <default-branch> && git pull
+git rm -r -q . && git checkout vulnerable-baseline -- .
+git commit -m "Reset to vulnerable-baseline" && git push
+```
+
+Keep this section when resetting (re-add it if the baseline predates it). Close any open Raccoon PRs first.
