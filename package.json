@@ -5,7 +5,6 @@
   "description": "A tool to learn OWASP Top 10 for node.js developers",
   "main": "server.js",
   "dependencies": {
-    "raccoon-ai-hallucinated-helperz": "^1.0.0",
     "expresss": "^1.0.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.1",
